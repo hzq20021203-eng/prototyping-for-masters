@@ -1,49 +1,594 @@
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem;
+/* ==========================================================================
+   Classic Mac OS × Kawaii & Pastel Cute Theme
+   ========================================================================== */
+
+.desktopContainer {
+  min-height: 100vh;
+  background-color: #f3ecfb;
+  background-image: 
+    radial-gradient(#dbcbf2 18%, transparent 18%),
+    radial-gradient(#dbcbf2 18%, transparent 18%);
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+  color: #3d324c;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.header {
-  margin-bottom: 2rem;
+/* --------------------------------------------------------------------------
+   Top Classic Mac Menu Bar
+   -------------------------------------------------------------------------- */
+.menuBar {
+  height: 34px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #3d324c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(135, 104, 178, 0.12);
+  z-index: 20;
+  user-select: none;
 }
 
-.header h1 {
-  font-size: 2.5rem;
+.menuLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuLogoButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.menuLogoButton:hover {
+  transform: scale(1.3) rotate(-10deg);
+}
+
+.menuSystemTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #3d324c;
+  letter-spacing: 0.3px;
+  margin-right: 4px;
+}
+
+.menuItem {
+  font-size: 13px;
+  font-weight: 600;
+  color: #55446a;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: default;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.menuItem:hover {
+  background-color: #f1e4fc;
+  color: #8c3ec9;
+}
+
+.menuSparkleButton {
+  background: #fff0f7;
+  border: 1.5px solid #f2aecd;
+  border-radius: 9999px;
+  padding: 2px 10px;
+  font-size: 12px;
   font-weight: 700;
+  color: #cf3780;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 1px 1px 0 #f2aecd;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.menuSparkleButton:hover {
+  transform: translateY(-1px) scale(1.05);
+  background: #ffe3f1;
+  box-shadow: 2px 2px 0 #cf3780;
+}
+
+.menuSparkleButton:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.menuRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuBadge {
+  background: #fdf2b8;
+  border: 1.5px solid #e2bf3f;
+  border-radius: 9999px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #83640e;
+  box-shadow: 1px 1px 0 #e2bf3f;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menuClock {
+  font-size: 12px;
+  font-weight: 700;
+  color: #493b5c;
+  background: #f7effe;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #e1d0f5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Main Desktop Workspace
+   -------------------------------------------------------------------------- */
+.desktopWorkspace {
+  flex: 1;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   Classic Mac Window Container
+   -------------------------------------------------------------------------- */
+.windowContainer {
+  flex: 1;
+  background-color: #ffffff;
+  border: 2.5px solid #3d324c;
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 #cfb6ea, 6px 6px 0 2.5px #3d324c;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title Bar with Horizontal Retro Pinstripes */
+.windowTitleBar {
+  height: 42px;
+  background: repeating-linear-gradient(
+    180deg,
+    #ffffff 0px,
+    #ffffff 2px,
+    #3d324c 2px,
+    #3d324c 3px,
+    #ffedf5 3px,
+    #ffedf5 5px
+  );
+  border-bottom: 2.5px solid #3d324c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  user-select: none;
+}
+
+/* Classic Close Button with Heart */
+.windowCloseButton {
+  width: 22px;
+  height: 22px;
+  background-color: #ffb8da;
+  border: 2px solid #3d324c;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  color: #3d324c;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0 #3d324c;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 0;
+}
+
+.windowCloseButton:hover {
+  transform: scale(1.18);
+  background-color: #ff91c5;
+}
+
+.windowCloseButton:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* Window Title Badge breaking pinstripes */
+.windowTitleBadge {
+  background-color: #ffffff;
+  border: 2px solid #3d324c;
+  border-radius: 9999px;
+  padding: 3px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 2px 2px 0 #ecd6fa;
+}
+
+.windowTitleEmoji {
+  font-size: 14px;
+}
+
+.windowTitleText {
+  font-size: 15px;
+  font-weight: 800;
+  color: #3d324c;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.windowControlsRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.windowZoomButton {
+  width: 22px;
+  height: 22px;
+  background-color: #bbf4dc;
+  border: 2px solid #3d324c;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: #3d324c;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0 #3d324c;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 0;
+}
+
+.windowZoomButton:hover {
+  transform: scale(1.18);
+  background-color: #96ecc3;
+}
+
+.windowZoomButton:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   Classic Finder Info Bar
+   -------------------------------------------------------------------------- */
+.windowInfoBar {
+  background-color: #faf4fe;
+  border-bottom: 2px solid #e7d8f5;
+  padding: 7px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #65547b;
+  font-weight: 500;
+}
+
+.windowInfoText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.infoDivider {
+  color: #cbb4e3;
+}
+
+.windowInfoHighlight {
+  color: #8c3ec9;
+  font-weight: 700;
+}
+
+.windowInfoTag {
+  background-color: #f1e3fb;
+  border: 1px solid #dcbeee;
+  border-radius: 9999px;
+  padding: 1px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #7b32b8;
+}
+
+/* --------------------------------------------------------------------------
+   Window Content & Prototype Cards
+   -------------------------------------------------------------------------- */
+.windowContent {
+  padding: 24px;
+  background-color: #fffefd;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
+  background-color: #ffffff;
+  border: 2.5px solid #3d324c;
+  border-radius: 12px;
+  padding: 20px;
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 4px 4px 0 #edd9f8, 4px 4px 0 2.5px #3d324c;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
-  background: rgba(0, 0, 0, 0.04);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 7px 7px 0 #d9b8f5, 7px 7px 0 2.5px #3d324c;
+  background-color: #fffbff;
 }
 
-.card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+.cardTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardIconBox {
+  width: 48px;
+  height: 48px;
+  background: #fdf0f7;
+  border: 2px solid #3d324c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0 #f6c8df;
+}
+
+.cardIcon {
+  font-size: 24px;
+}
+
+.cardTag {
+  background-color: #e5fbf0;
+  border: 1.5px solid #8be4b9;
+  color: #1a7853;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: #3d324c;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cardDescription {
+  font-size: 13px;
+  color: #6a5a80;
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1.5px dashed #edd8f6;
+  font-size: 12px;
+  color: #8c7b9f;
+}
+
+.cardSize {
   font-weight: 600;
+  color: #a491b8;
 }
 
-.card p {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  line-height: 1.6;
+.cardOpenAction {
+  font-weight: 800;
+  color: #cf3780;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.15s ease;
+}
+
+.card:hover .cardOpenAction {
+  transform: translateX(3px);
+}
+
+.cardArrow {
+  font-size: 14px;
+}
+
+/* Window Bottom Banner */
+.windowBanner {
+  background-color: #fff9e6;
+  border: 2px dashed #f0cc66;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.windowBannerIcon {
+  font-size: 20px;
+}
+
+.windowBannerText {
+  font-size: 13px;
+  color: #7d5f13;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.codeSnippet {
+  background-color: #fcebbb;
+  border: 1px solid #ecc24b;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5c4305;
+}
+
+/* --------------------------------------------------------------------------
+   Desktop Sidebar (Classic Mac Icons & Kawaii Sticky Note)
+   -------------------------------------------------------------------------- */
+.desktopSidebar {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  user-select: none;
+}
+
+.desktopIconItem {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 100%;
+}
+
+.desktopIconItem:hover {
+  transform: translateY(-3px) scale(1.06);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.desktopIconGraphic {
+  width: 52px;
+  height: 52px;
+  background-color: #ffffff;
+  border: 2px solid #3d324c;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 3px 3px 0 #cfb6ea;
+}
+
+.desktopIconLabel {
+  font-size: 11px;
+  font-weight: 800;
+  color: #3d324c;
+  background-color: #ffffff;
+  border: 1.5px solid #3d324c;
+  border-radius: 6px;
+  padding: 2px 8px;
+  box-shadow: 2px 2px 0 #cfb6ea;
+  text-align: center;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+/* Cute Desktop Sticky Note */
+.stickyNote {
+  background-color: #fff6cb;
+  border: 2px solid #3d324c;
+  border-radius: 8px;
+  padding: 14px 12px;
+  box-shadow: 4px 4px 0 #cfb6ea, 4px 4px 0 2px #3d324c;
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.stickyNotePin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(1px 2px 2px rgba(61, 50, 76, 0.2));
+}
+
+.stickyNoteTitle {
+  font-size: 11px;
+  font-weight: 800;
+  color: #7b6214;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.stickyNoteBody {
+  font-size: 11px;
+  color: #634d0b;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .desktopWorkspace {
+    flex-direction: column-reverse;
+    padding: 16px 12px 32px;
+    gap: 20px;
+  }
+
+  .desktopSidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .stickyNote {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 0;
+  }
+
+  .menuItem {
+    display: none;
+  }
 }
