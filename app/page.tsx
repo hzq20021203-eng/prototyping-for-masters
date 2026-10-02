@@ -63,6 +63,14 @@ export default function Home() {
       tag: "Interactive",
       size: "4.8 KB",
     },
+    {
+      title: "Pattern playground",
+      description: "Interactive geometric vector pattern with ripple disturbance, cursor repulsion physics, and playful scatter dynamics using PixiJS v8",
+      path: "/prototypes/pattern-playground",
+      icon: "🧩",
+      tag: "PixiJS v8",
+      size: "3.4 KB",
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype',
