@@ -1,0 +1,1053 @@
+/* ========================================================
+   Doodle Playground ("Wen Hsiu Starter Pack" Edition)
+   Styles for App Router Prototype (CSS Modules Compliant)
+   Visual Theme strictly inspired by Wen Hsiu Starter Pack:
+   - Vibrant Green Craft Felt Background
+   - Bubblegum Pink Blister Pack Headers & Sprue Runners
+   - Charcoal Ink Hand-drawn Outlines & Chunky Drop Shadows
+   - Crisp Cardstock Cream Backings
+   ======================================================== */
+
+.container {
+  /* Theme Palette from Reference Image */
+  --os-bg: #279655;
+  --felt-dark: #1E7E44;
+  --felt-light: #32AB63;
+
+  --win-bg: #FFFDF9;
+  --win-border: #1E232A;
+  --win-header: #FF65A8;
+  --win-header-text: #1E232A;
+  --win-shadow: 4px 5px 0px #14171A;
+
+  --sprue-pink: #FF6BB0;
+  --sprue-pink-dark: #E03582;
+  --sprue-plastic-glow: rgba(255, 107, 176, 0.35);
+
+  --accent-yellow: #FDE047;
+  --accent-blue: #4A88C5;
+  --accent-green: #279655;
+  --accent-coral: #FF65A8;
+  --accent-magenta: #C91A7A;
+  --accent-peach: #F6AF88;
+
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+
+  /* Rich textured green craft felt background */
+  background-color: var(--os-bg);
+  background-image: 
+    radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.12) 0%, transparent 65%),
+    radial-gradient(var(--felt-dark) 1.2px, transparent 1.2px),
+    radial-gradient(var(--felt-light) 1.2px, transparent 1.2px);
+  background-size: 100% 100%, 8px 8px, 12px 12px;
+  background-position: 0 0, 0 0, 4px 4px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--win-border);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ========================================================
+   Full-screen Canvas Particle Overlay
+   ======================================================== */
+.particleOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ========================================================
+   Top Navigation & Menu Bar
+   ======================================================== */
+.topNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: #FFFDF9;
+  border-bottom: 2.8px solid var(--win-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 10000;
+  box-shadow: 0 3px 0 rgba(20, 23, 26, 0.18);
+}
+
+.navGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 11px;
+  background: #FFFFFF;
+  border: 2px solid var(--win-border);
+  border-radius: 999px;
+  color: var(--win-border);
+  font-size: 12.5px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 2px 2px 0 var(--win-border);
+  transition: transform 0.08s, background-color 0.12s;
+}
+
+.backButton:hover {
+  background: #FFE4EE;
+  transform: translateY(-1px);
+}
+
+/* Iconic "Wen Hsiu starter pack" Brand Badge */
+.brandBadge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #FFF0F6;
+  padding: 3px 12px;
+  border-radius: 999px;
+  border: 2px solid var(--win-border);
+  box-shadow: 2px 2px 0 var(--win-border);
+}
+
+.brandBadgeStamp {
+  background: #E11D48;
+  color: #FFFFFF;
+  font-size: 8.5px;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.brandBadgeTitle {
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--accent-green);
+  letter-spacing: -0.2px;
+}
+
+.brandBadgeSub {
+  font-weight: 800;
+  font-size: 11.5px;
+  color: var(--accent-magenta);
+}
+
+.brandBadgeSparkle {
+  color: #FF65A8;
+  font-size: 12px;
+}
+
+.modeGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #F3F4F6;
+  padding: 3px 4px;
+  border-radius: 999px;
+  border: 2px solid var(--win-border);
+}
+
+.modeButton {
+  background: transparent;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--win-border);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.modeButton:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.modeButtonActive {
+  background: #FFFFFF;
+  box-shadow: 1.5px 1.5px 0 var(--win-border);
+  border: 1.5px solid var(--win-border);
+  color: #BE185D;
+}
+
+.actionButton {
+  background: #FFFFFF;
+  border: 2px solid var(--win-border);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--win-border);
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--win-border);
+  transition: transform 0.08s, background-color 0.12s, box-shadow 0.08s;
+}
+
+.actionButton:hover {
+  background: #FEF3C7;
+  transform: translateY(-1px);
+  box-shadow: 2.5px 2.5px 0 var(--win-border);
+}
+
+.actionButton:active {
+  transform: translateY(1.5px);
+  box-shadow: 0px 0px 0 var(--win-border);
+}
+
+.actionButtonActive {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+/* ========================================================
+   Main Felt Mat Workspace & Sidebar Stickers
+   ======================================================== */
+.desktopWorkspace {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 44px);
+  margin-top: 44px;
+  overflow: hidden;
+}
+
+.desktopIconGrid {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 5;
+}
+
+/* Die-cut packaging stickers resting on felt */
+.desktopIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 86px;
+  padding: 7px 5px 6px 5px;
+  background: rgba(255, 253, 249, 0.95);
+  border-radius: 12px;
+  border: 2.2px solid var(--win-border);
+  box-shadow: 3px 3px 0 rgba(20, 23, 26, 0.45);
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s;
+}
+
+.desktopIcon:hover {
+  background: #FFFFFF;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 4px 6px 0 rgba(20, 23, 26, 0.5);
+}
+
+.desktopIconSelected {
+  background: #FEF08A;
+  border-color: var(--win-border);
+}
+
+.iconArtwork {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.doodleSvg {
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center center;
+}
+
+.iconLabel {
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--win-border);
+  letter-spacing: 0.1px;
+  line-height: 1.2;
+}
+
+/* ========================================================
+   Blister Card Packaging Window System
+   ======================================================== */
+.retroWindow {
+  position: absolute;
+  background: var(--win-bg);
+  border: 3px solid var(--win-border);
+  border-radius: 16px;
+  box-shadow: var(--win-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+
+.retroWindowActive {
+  box-shadow: 6px 8px 0px #14171A;
+}
+
+.windowDragging {
+  opacity: 0.96;
+  box-shadow: 8px 12px 0px rgba(20, 23, 26, 0.45);
+}
+
+.windowMinimized .windowBody {
+  display: none !important;
+}
+
+.windowMinimized {
+  height: auto !important;
+}
+
+.windowTitleBar {
+  background: var(--win-header);
+  border-bottom: 2.8px solid var(--win-border);
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+}
+
+.windowTitleBar:active {
+  cursor: grabbing;
+}
+
+.titleLeft {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.winMiniIcon {
+  font-size: 15px;
+}
+
+.windowTitle {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--win-header-text);
+  letter-spacing: 0.3px;
+}
+
+.windowControls {
+  display: flex;
+  gap: 6px;
+}
+
+.windowCtrlBtn {
+  width: 22px;
+  height: 22px;
+  background: #FFFDF9;
+  border: 2px solid var(--win-border);
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 1px 1.5px 0 var(--win-border);
+  transition: all 0.1s;
+}
+
+.windowCtrlBtn:hover {
+  background: #FEF08A;
+  transform: translateY(-1px);
+}
+
+.ctrlClose:hover {
+  background: #FB7185;
+  color: #FFFFFF;
+}
+
+.windowBody {
+  padding: 12px;
+  background: var(--win-bg);
+  position: relative;
+  overflow: auto;
+}
+
+/* ========================================================
+   WINDOW 1: Wen Hsiu Model Kit Sprue Runner
+   ======================================================== */
+.modelKitBody {
+  padding: 10px 12px 16px 12px;
+  background: var(--os-bg);
+  background-image: 
+    radial-gradient(var(--felt-dark) 1.2px, transparent 1.2px),
+    radial-gradient(var(--felt-light) 1.2px, transparent 1.2px);
+  background-size: 8px 8px, 12px 12px;
+  background-position: 0 0, 4px 4px;
+}
+
+.modelKitInstructions {
+  background: #FEF9C3;
+  border: 2.2px solid var(--win-border);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 0 var(--win-border);
+  color: #1E232A;
+}
+
+.sprueRunnerFrame {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 14px;
+}
+
+/* Blister packaging pink header card with punch hole */
+.sprueHeaderCard {
+  position: relative;
+  background: var(--sprue-pink);
+  border: 3px solid var(--win-border);
+  border-radius: 14px 14px 0 0;
+  padding: 8px 14px 10px 14px;
+  text-align: center;
+  box-shadow: 0 3px 0 var(--win-border);
+  overflow: hidden;
+}
+
+/* The iconic blister hang punch hole */
+.sprueHangHole {
+  width: 44px;
+  height: 10px;
+  background: var(--os-bg);
+  border: 2.2px solid var(--win-border);
+  border-radius: 6px;
+  margin: 0 auto 6px auto;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.sprueHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sprueHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.doodleGlassesSvg {
+  display: block;
+}
+
+.sprueTaiwanPill {
+  background: #E11D48;
+  color: #FFFFFF;
+  font-size: 8.5px;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.sprueHeaderCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sprueWenHsiuTitle {
+  font-weight: 900;
+  font-size: 20px;
+  color: #1E824C;
+  text-shadow: 1.5px 1.5px 0px #FFFFFF, -1px -1px 0 #FFFFFF;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.titleSparkle {
+  color: #FFFFFF;
+  font-size: 14px;
+  text-shadow: 1px 1px 0 #C91A7A;
+}
+
+.sprueStarterSub {
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--accent-magenta);
+  letter-spacing: 0.5px;
+  margin-top: -1px;
+}
+
+.sprueHeaderRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sprueRoundStamp {
+  width: 32px;
+  height: 32px;
+  border: 2.2px solid #E11D48;
+  border-radius: 50%;
+  color: #E11D48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.sprueBrandTag {
+  font-weight: 900;
+  font-size: 16px;
+  color: #1E824C;
+  text-shadow: 1.5px 1.5px 0 #FFFFFF;
+}
+
+.sprueSubTag {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent-magenta);
+}
+
+.sprueBadge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: #FFFFFF;
+  border: 2px solid var(--win-border);
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.spruePlasticBoard {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  margin: 0 auto;
+}
+
+.spruePipesSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.spruePart {
+  position: absolute;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.spruePart:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.spruePartDragging {
+  cursor: grabbing;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.4));
+  transform: scale(1.12) !important;
+  z-index: 99999 !important;
+}
+
+.spruePartInner {
+  transition: transform 0.1s ease-out;
+  transform-origin: center center;
+}
+
+.sprueGate {
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  background: var(--sprue-pink);
+  border: 1.8px solid var(--win-border);
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gateLeft { left: -7px; }
+.gateRight { right: -7px; }
+
+.spruePartSnapped .sprueGate {
+  background: #FDA4AF;
+  border-style: dashed;
+  opacity: 0.35;
+}
+
+/* ========================================================
+   WINDOW 2: Doll Assembly Stand
+   ======================================================== */
+.assemblyStandCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFDF9;
+  border: 2.2px solid var(--win-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.assemblyTitle {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--win-border);
+}
+
+.assemblySubtitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748B;
+  margin-bottom: 10px;
+}
+
+.dollStage {
+  position: relative;
+  width: 270px;
+  height: 330px;
+  background: #F9F7F2;
+  border: 2.5px dashed #CBD5E1;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  transition: transform 0.3s;
+}
+
+.dollCheering {
+  animation: dollHop 0.5s ease infinite alternate;
+}
+
+@keyframes dollHop {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.dollGuideSilhouette {
+  position: absolute;
+  width: 140px;
+  height: 280px;
+  background: rgba(226, 232, 240, 0.45);
+  border-radius: 60px 60px 20px 20px;
+  pointer-events: none;
+}
+
+.dollSlot {
+  position: absolute;
+  border: 2px dashed #94A3B8;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slotHover {
+  border-color: #EC4899;
+  background: rgba(254, 205, 211, 0.65);
+  transform: scale(1.08);
+}
+
+.slotFilled {
+  border: none;
+  background: transparent;
+}
+
+.slottedItem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: popIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.slotHair      { top: 12px; left: 85px; width: 95px; height: 50px; z-index: 8; }
+.slotMind      { top: 58px; left: 88px; width: 90px; height: 52px; z-index: 5; }
+.slotFace      { top: 105px; left: 88px; width: 90px; height: 65px; z-index: 6; }
+.slotGlasses   { top: 110px; left: 95px; width: 75px; height: 35px; z-index: 9; }
+.slotTop       { top: 165px; left: 80px; width: 110px; height: 60px; z-index: 7; }
+.slotBottom    { top: 220px; left: 88px; width: 95px; height: 80px; z-index: 6; }
+.slotShoes     { top: 285px; left: 96px; width: 80px; height: 42px; z-index: 5; }
+.slotAccessory { top: 185px; left: 188px; width: 65px; height: 65px; z-index: 8; }
+
+.assemblyControls {
+  display: flex;
+  gap: 10px;
+}
+
+/* ========================================================
+   Retro Pop Packaging Buttons
+   ======================================================== */
+.retroBtn {
+  background: #FFFDF9;
+  border: 2.2px solid var(--win-border);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--win-border);
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--win-border);
+  transition: transform 0.08s, box-shadow 0.08s, background 0.15s;
+}
+
+.retroBtn:hover {
+  background: #FFE4EE;
+  transform: translateY(-1px);
+  box-shadow: 2.5px 3px 0 var(--win-border);
+}
+
+.retroBtn:active {
+  transform: translateY(1.5px);
+  box-shadow: 0px 0px 0 var(--win-border);
+}
+
+.retroBtnPrimary {
+  background: #FEF08A;
+  color: #1E232A;
+}
+
+.retroBtnPrimary:hover {
+  background: #FDE047;
+}
+
+.retroBtnOk {
+  background: #FEF08A;
+  padding: 6px 26px;
+  font-size: 13.5px;
+}
+
+/* ========================================================
+   WINDOW 3: DoodlePaint Studio (Wen Hsiu Palette)
+   ======================================================== */
+.paintWindowBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+}
+
+.paintToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #FFFBEB;
+  border: 2px solid var(--win-border);
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+.paintToolsGroup {
+  display: flex;
+  gap: 5px;
+}
+
+.paintToolBtn {
+  background: #FFFFFF;
+  border: 2px solid var(--win-border);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--win-border);
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0 var(--win-border);
+}
+
+.paintToolBtnActive {
+  background: #FEF08A;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,0.2);
+  transform: translateY(1px);
+}
+
+.paintPaletteGroup {
+  display: flex;
+  gap: 5px;
+  background: #FFFFFF;
+  border: 1.8px solid var(--win-border);
+  border-radius: 8px;
+  padding: 4px 6px;
+}
+
+.paletteSwatch {
+  width: 19px;
+  height: 19px;
+  border-radius: 4px;
+  border: 1.5px solid var(--win-border);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.paletteSwatch:hover {
+  transform: scale(1.18);
+}
+
+.paletteSwatchSelected {
+  outline: 2.2px solid #1E232A;
+  outline-offset: 1px;
+}
+
+.paintCanvasWrapper {
+  flex: 1;
+  background: #FFFFFF;
+  border: 2.5px solid var(--win-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  min-height: 240px;
+}
+
+.doodlePaintCanvas {
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+/* ========================================================
+   WINDOW 4: Desk Accessories (My Computer)
+   ======================================================== */
+.myComputerBody {
+  padding: 14px;
+}
+
+.folderItemsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.folderItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 11.5px;
+  font-weight: 800;
+  transition: background 0.1s, transform 0.1s;
+}
+
+.folderItem:hover {
+  background: #FEF08A;
+  border-color: var(--win-border);
+  transform: translateY(-2px);
+}
+
+.folderIcon {
+  margin-bottom: 5px;
+}
+
+/* ========================================================
+   WINDOW 5: Cute Energy Meter (World Domination.exe)
+   ======================================================== */
+.progressBody {
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.progressLabel {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.progressInstruction {
+  font-size: 11px;
+  font-weight: 600;
+  color: #B45309;
+  margin-bottom: 8px;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 22px;
+  background: #FFFFFF;
+  border: 2.5px solid var(--win-border);
+  border-radius: 999px;
+  overflow: hidden;
+  padding: 2px;
+  cursor: ew-resize;
+  box-shadow: inset 1px 2px 2px rgba(0,0,0,0.1);
+}
+
+.progressFill {
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #FF65A8,
+    #FF65A8 10px,
+    #F472B6 10px,
+    #F472B6 20px
+  );
+  border-radius: 999px;
+  transition: width 0.1s ease-out;
+}
+
+/* ========================================================
+   WINDOW 6: Packaging Cute Alert Dialog
+   ======================================================== */
+.errorDialogBody {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+}
+
+.errorIconCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #EF4444;
+  border: 2.5px solid var(--win-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0 var(--win-border);
+  flex-shrink: 0;
+}
+
+.errorX {
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.errorMsgArea {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.errorTitle {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.errorSub {
+  font-size: 11.5px;
+  color: #4B5563;
+  line-height: 1.3;
+}
+
+/* ========================================================
+   Draggable Desktop Pinned Stickers
+   ======================================================== */
+.desktopPinnedSticker {
+  position: absolute;
+  background: #FFFFFF;
+  border: 2.5px solid var(--win-border);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: var(--win-shadow);
+  cursor: grab;
+  z-index: 50;
+  display: inline-block;
+  animation: stickerDrop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.desktopPinnedSticker:active {
+  cursor: grabbing;
+}
+
+@keyframes stickerDrop {
+  0% { transform: scale(0.4) rotate(-15deg); opacity: 0; }
+  100% { transform: scale(1) rotate(-3deg); opacity: 1; }
+}
+
+.stickerPin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+}
+
+.pinnedImg {
+  max-width: 180px;
+  max-height: 140px;
+  display: block;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.stickerCloseBtn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: #FB7185;
+  color: #FFFFFF;
+  border: 1.8px solid var(--win-border);
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 var(--win-border);
+}
+
+/* ========================================================
+   Transient Chaos Popups
+   ======================================================== */
+.transientPopup {
+  animation: popBounce 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popBounce {
+  0% { transform: scale(0.3); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

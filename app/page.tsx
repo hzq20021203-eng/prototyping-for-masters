@@ -71,6 +71,14 @@ export default function Home() {
       tag: "PixiJS v8",
       size: "3.4 KB",
     },
+    {
+      title: "Doodle playground",
+      description: "Interactive doodle playground featuring the Wen Hsiu starter pack plastic model kit runner, dress-up doll assembly stand, living ink pets, and cursor sparkle trails",
+      path: "/prototypes/doodle-playground",
+      icon: "🌸",
+      tag: "Interactive",
+      size: "4.8 KB",
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype',

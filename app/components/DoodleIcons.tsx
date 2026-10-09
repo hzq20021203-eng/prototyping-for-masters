@@ -562,6 +562,65 @@ export function DoodlePushPin({ size = 20, className }: DoodleProps) {
 }
 
 /**
+ * ✏️ Doodle Pen / Pencil Icon
+ */
+export function DoodlePen({ size = 24, className }: DoodleProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={{ display: "inline-block", verticalAlign: "middle" }}
+    >
+      {/* Pencil Barrel */}
+      <path
+        d="M6 18 L16.5 7.5 L19.5 10.5 L9 21 Z"
+        fill="#ffbe0b"
+        stroke="#3d324c"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      {/* Wooden Tip */}
+      <path
+        d="M6 18 L3 21 L9 21 Z"
+        fill="#fde2b2"
+        stroke="#3d324c"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      {/* Lead Tip */}
+      <path d="M3 21 L4.8 19.2 L6.2 20.6 Z" fill="#3d324c" />
+      {/* Eraser Band & Eraser */}
+      <path
+        d="M16.5 7.5 L18 6 L21 9 L19.5 10.5 Z"
+        fill="#ff7597"
+        stroke="#3d324c"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      {/* Subtle Facet Line */}
+      <line
+        x1="11.2"
+        y1="9"
+        x2="7.5"
+        y2="19.5"
+        stroke="#ffffff"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+      />
+      {/* Mini doodle sparkle */}
+      <path
+        d="M19 3 C19 4.2 20 4.5 21 5 C20 5.5 19 5.8 19 7 C19 5.8 18 5.5 17 5 C18 4.5 19 4.2 19 3 Z"
+        fill="#3a86ff"
+      />
+    </svg>
+  );
+}
+
+/**
  * Dynamic Doodle Icon Mapper
  * Handles both emoji symbols and text names gracefully!
  */
@@ -575,6 +634,11 @@ export function DoodleIcon({
   className?: string;
 }) {
   switch (name) {
+    case "✏️":
+    case "pencil":
+    case "pen":
+    case "doodle":
+      return <DoodlePen size={size} className={className} />;
     case "🌸":
     case "blossom":
     case "sakura":
