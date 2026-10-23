@@ -79,10 +79,34 @@ export default function Home() {
       tag: "Interactive",
       size: "4.8 KB",
     },
+    {
+      title: "Weather postcard",
+      description: "Generate playful handmade paper-cut atmospheric postcards with real-time live global weather from OpenWeatherMap",
+      path: "/prototypes/weather-postcard",
+      icon: "📮",
+      tag: "OpenWeather",
+      size: "4.2 KB",
+    },
+    {
+      title: "Blind date with a book",
+      description: "A playful, mysterious literary matchmaking experience wrapped in parcel paper and revealed via Open Library",
+      path: "/prototypes/blind-date-with-a-book",
+      icon: "📖",
+      tag: "Open Library",
+      size: "4.5 KB",
+    },
+    {
+      title: "My Bookshelf",
+      description: "An experimental digital art exhibition and reading archive powered by Notion Data Sources API",
+      path: "/prototypes/my-bookshelf",
+      icon: "📚",
+      tag: "Notion API",
+      size: "5.1 KB",
+    },
     // Add your new prototypes here like this:
     // {
-    //   title: 'Your new prototype',
-    //   description: 'A short description of what this prototype does',
+    //   title: 'Your new prototype\,
+    //   description: 'A short description of what this prototype does\,
     //   path: '/prototypes/my-new-prototype'
     // },
   ];
@@ -168,7 +192,7 @@ export default function Home() {
 
             <div className={styles.windowTitleBadge}>
               <DoodleBlossom size={16} />
-              <h1 className={styles.windowTitleText}>Ziqing Huang's prototypes</h1>
+              <h1 className={styles.windowTitleText}>Ziqing Huang&apos;s prototypes</h1>
               <DoodleBlossom size={16} />
             </div>
 
@@ -285,7 +309,7 @@ export default function Home() {
             </div>
             <div className={styles.stickyNoteTitle}>To-Do Note</div>
             <p className={styles.stickyNoteBody}>
-              Welcome to Ziqing's prototyping lab! Click any card to test an interaction.
+              Welcome to Ziqing&apos;s prototyping lab! Click any card to test an interaction.
             </p>
           </div>
         </aside>
@@ -293,4 +317,3 @@ export default function Home() {
     </div>
   );
 }
-

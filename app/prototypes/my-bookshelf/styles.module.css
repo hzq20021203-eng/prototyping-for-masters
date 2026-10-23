@@ -1,0 +1,1688 @@
+/* ==========================================================================
+   BOOKS ARE NOT JUST BOOKS — Digital Art Exhibition
+   Next.js CSS Module for /prototypes/my-bookshelf
+   ========================================================================== */
+
+.exhibitionSpace {
+  --canvas: #F6F5F0;
+  --canvas-surface: #ECEAE3;
+  --canvas-paper: #FAF9F6;
+  --carbon: #0E0E0D;
+  --carbon-soft: #242422;
+  --carbon-muted: #575550;
+  --gray-subtle: #8A887F;
+  --vermilion: #FF3300;
+  --vermilion-glow: rgba(255, 51, 0, 0.15);
+  --hairline: #D9D7CE;
+  --hairline-dark: #0E0E0D;
+
+  --max-width: 1560px;
+  --header-height: 48px;
+  --transition-fast: 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.2, 0, 0, 1);
+
+  background-color: var(--canvas);
+  color: var(--carbon);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.45;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Header: Minimal Architectural Masthead
+   ========================================================================== */
+.exhibitionHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--canvas);
+  border-bottom: 1px solid var(--carbon);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 50;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  color: var(--carbon);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--carbon);
+  transition: all var(--transition-fast);
+}
+
+.backButton:hover {
+  background-color: var(--carbon);
+  color: var(--canvas);
+}
+
+.exhibitionSymbol {
+  color: var(--vermilion);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.exhibitionTitle {
+  font-weight: 700;
+  color: var(--carbon);
+}
+
+.headerCenter {
+  display: flex;
+  align-items: center;
+}
+
+.curatorialTag {
+  color: var(--carbon-muted);
+  font-weight: 500;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statusIndicatorBtn {
+  background: transparent;
+  border: 1px solid var(--hairline);
+  padding: 0.25rem 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--carbon);
+  transition: border-color var(--transition-fast);
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.actionBtnMono {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--carbon-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.actionBtnMono:hover {
+  color: var(--vermilion);
+  border-color: var(--vermilion);
+}
+
+/* ==========================================================================
+   Main Exhibition Space
+   ========================================================================== */
+.exhibitionContent {
+  padding-bottom: 6rem;
+}
+
+/* ==========================================================================
+   Monumental Typographic Hero Section
+   ========================================================================== */
+.monumentalHero {
+  position: relative;
+  padding: 4.5rem 2rem 3.5rem 2rem;
+  border-bottom: 2px solid var(--carbon);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.heroManifestoGrid {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+.manifestoLine {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  white-space: nowrap;
+}
+
+.line1 {
+  justify-content: flex-start;
+}
+
+.line2 {
+  justify-content: flex-start;
+  padding-left: 5vw;
+}
+
+.line3 {
+  justify-content: flex-start;
+  padding-left: 14vw;
+}
+
+.textGiantSerif {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(4.5rem, 13.5vw, 15rem);
+  font-weight: 400;
+  color: var(--carbon);
+  text-transform: uppercase;
+}
+
+.textGiantSans {
+  font-family: var(--font-sans, sans-serif);
+  font-size: clamp(3.5rem, 11vw, 12rem);
+  font-weight: 700;
+  color: var(--carbon);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--carbon);
+  transition: color var(--transition-smooth);
+}
+
+.outline:hover {
+  color: var(--carbon);
+}
+
+.vermilionSlash {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(3.5rem, 11vw, 12rem);
+  font-style: italic;
+  color: var(--vermilion);
+  font-weight: 300;
+  margin: 0 0.5rem;
+}
+
+.vermilionPeriod {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(4.5rem, 13.5vw, 15rem);
+  color: var(--vermilion);
+  line-height: 0.5;
+}
+
+.manifestoTag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--vermilion);
+  margin-left: 2rem;
+  align-self: center;
+  transform: translateY(-1rem);
+}
+
+/* Hero Curatorial Statement & Metadata Strip */
+.heroCuratorialStatement {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4rem;
+  margin-top: 4.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--carbon);
+}
+
+.statementColLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.monoHeading {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--vermilion);
+  font-weight: 700;
+}
+
+.statementText {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--carbon-soft);
+  max-width: 640px;
+  font-weight: 400;
+}
+
+.statementColRight {
+  display: flex;
+  align-items: flex-end;
+}
+
+.exhibitionMetaStrip {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  background-color: var(--canvas-surface);
+  border: 1px solid var(--carbon);
+  padding: 1.5rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.metaCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metaLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--carbon-muted);
+}
+
+.metaVal {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.85rem;
+  color: var(--carbon);
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+/* ==========================================================================
+   Sticky Curatorial Taxonomy Bar
+   ========================================================================== */
+.curatorialTaxonomyBar {
+  position: sticky;
+  top: var(--header-height);
+  width: 100%;
+  background-color: var(--canvas);
+  border-bottom: 1px solid var(--carbon);
+  z-index: 40;
+  backdrop-filter: blur(10px);
+}
+
+.taxonomyBarInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.85rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+.viewSwitchCluster {
+  display: flex;
+  border: 1px solid var(--carbon);
+}
+
+.viewToggleBtn {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--carbon);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.viewToggleBtn:not(:last-child) {
+  border-right: 1px solid var(--carbon);
+}
+
+.viewToggleBtn:hover {
+  background-color: var(--canvas-surface);
+}
+
+.viewToggleBtnActive {
+  background-color: var(--carbon);
+  color: var(--canvas);
+}
+
+.viewToggleBtnActive .toggleIcon {
+  color: var(--vermilion);
+}
+
+.curatorialSearch {
+  flex: 1;
+  max-width: 520px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--hairline-dark);
+  background: var(--canvas-paper);
+  padding: 0.35rem 0.75rem;
+  gap: 0.5rem;
+  box-sizing: border-box;
+}
+
+.searchCode {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--vermilion);
+  white-space: nowrap;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  color: var(--carbon);
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--gray-subtle);
+  font-size: 0.8rem;
+}
+
+.searchClearBtn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--carbon-muted);
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.searchClearBtn:hover {
+  color: var(--vermilion);
+}
+
+.curatorialSort select {
+  border: 1px solid var(--carbon);
+  background-color: var(--canvas);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--carbon);
+  cursor: pointer;
+  outline: none;
+}
+
+.curatorialSort select:hover {
+  border-color: var(--vermilion);
+}
+
+.taxonomyGenresStrip {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 2rem 0.85rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+
+.taxonomyGenresStrip::-webkit-scrollbar {
+  display: none;
+}
+
+.taxonomyPrefix {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--carbon-muted);
+  white-space: nowrap;
+}
+
+.genreChipsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.taxonomyChip {
+  background: transparent;
+  border: 1px solid var(--hairline);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.75rem;
+  color: var(--carbon-soft);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+}
+
+.taxonomyChip:hover {
+  border-color: var(--carbon);
+  color: var(--carbon);
+}
+
+.taxonomyChipActive {
+  background-color: var(--carbon);
+  color: #FFFFFF;
+  border-color: var(--carbon);
+  position: relative;
+}
+
+.taxonomyChipActive::after {
+  content: ' ●';
+  color: var(--vermilion);
+  font-size: 0.6rem;
+}
+
+.galleryStatusBar {
+  max-width: var(--max-width);
+  margin: 1.5rem auto 1rem auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--carbon-muted);
+  border-bottom: 1px dashed var(--hairline);
+  padding-bottom: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Asymmetric Exhibition Promenade Container
+   ========================================================================== */
+.exhibitionPromenadeContainer {
+  max-width: var(--max-width);
+  margin: 2rem auto 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Motif A: The Monumental Plinth
+   ========================================================================== */
+.motifMonument {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+  padding: 3rem;
+  background-color: var(--canvas-paper);
+  border: 1px solid var(--carbon);
+  position: relative;
+  transition: box-shadow var(--transition-smooth);
+  box-sizing: border-box;
+}
+
+.motifMonument:hover {
+  box-shadow: 12px 12px 0px var(--carbon);
+}
+
+.artworkStage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  background: radial-gradient(circle at center, #FFFFFF 0%, var(--canvas-surface) 100%);
+  border: 1px solid var(--hairline);
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.artworkImg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  max-height: 540px;
+  object-fit: cover;
+  box-shadow: 0 16px 36px rgba(14, 14, 13, 0.18);
+  transition: transform var(--transition-smooth);
+}
+
+.motifMonument:hover .artworkImg {
+  transform: scale(1.025);
+}
+
+.artworkAnnotation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.annotationAccession {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--vermilion);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.annotationBadge {
+  background-color: var(--carbon);
+  color: #FFFFFF;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.annotationTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+  line-height: 0.98;
+  color: var(--carbon);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.annotationTitle:hover {
+  color: var(--vermilion);
+}
+
+.annotationCreator {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--carbon-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.35rem;
+}
+
+.annotationValuation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.valuationStars {
+  color: var(--vermilion);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+}
+
+.valuationScore {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--carbon);
+}
+
+.annotationQuote {
+  font-family: var(--font-serif, Georgia, serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: var(--carbon-soft);
+  border-left: 3px solid var(--vermilion);
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.annotationActionBtn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--carbon);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.75rem 1.5rem;
+  color: var(--carbon);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.annotationActionBtn:hover {
+  background-color: var(--carbon);
+  color: var(--canvas);
+}
+
+/* ==========================================================================
+   Motif B: The Asymmetrical Duet
+   ========================================================================== */
+.motifDuet {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 5rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.duetArtworkCard {
+  background-color: var(--canvas-paper);
+  border: 1px solid var(--carbon);
+  padding: 1.75rem;
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  box-sizing: border-box;
+}
+
+.duetArtworkCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 8px 8px 0px var(--carbon);
+}
+
+.duetOffsetRight {
+  margin-top: 5rem;
+}
+
+.duetStage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: var(--canvas-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.duetStage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.duetArtworkCard:hover .duetStage img {
+  transform: scale(1.04);
+}
+
+.duetMetaBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  margin-bottom: 0.75rem;
+}
+
+.duetCode {
+  color: var(--vermilion);
+  font-weight: 700;
+}
+
+.duetGenre {
+  color: var(--carbon-muted);
+  text-transform: uppercase;
+}
+
+.duetTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--carbon);
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+.duetArtworkCard:hover .duetTitle {
+  color: var(--vermilion);
+}
+
+.duetAuthor {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.9rem;
+  color: var(--carbon-muted);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.duetRating {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  color: var(--carbon);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.duetRating span:first-child {
+  color: var(--vermilion);
+}
+
+/* ==========================================================================
+   Motif C: The Editorial Panorama
+   ========================================================================== */
+.motifPanorama {
+  position: relative;
+  background-color: var(--carbon);
+  color: var(--canvas);
+  border: 1px solid var(--carbon);
+  padding: 4rem 3rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 4rem;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.panoramaGhostType {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(6rem, 18vw, 20rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.04);
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.panoramaStage {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.panoramaStage img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform var(--transition-smooth);
+}
+
+.motifPanorama:hover .panoramaStage img {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.panoramaAnnotation {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.panoramaTag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--vermilion);
+  font-weight: 700;
+}
+
+.panoramaTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: 1.02;
+  color: var(--canvas);
+  font-weight: 400;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.panoramaTitle:hover {
+  color: var(--vermilion);
+}
+
+.panoramaCreator {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 1.1rem;
+  color: var(--gray-subtle);
+  font-weight: 500;
+}
+
+.panoramaEssay {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #D1CFCA;
+  border-left: 2px solid var(--vermilion);
+  padding-left: 1.25rem;
+  max-width: 600px;
+  margin: 0;
+}
+
+.panoramaRatingRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  color: #FFFFFF;
+}
+
+.panoramaBtn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--canvas);
+  color: var(--canvas);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.panoramaBtn:hover {
+  background-color: var(--vermilion);
+  border-color: var(--vermilion);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Motif D: The Curated Triptych
+   ========================================================================== */
+.motifTriptych {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.triptychItem {
+  background-color: var(--canvas-paper);
+  border: 1px solid var(--carbon);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  box-sizing: border-box;
+}
+
+.triptychItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0px var(--carbon);
+}
+
+.stagger2 {
+  transform: translateY(3rem);
+}
+
+.stagger2:hover {
+  transform: translateY(calc(3rem - 5px));
+}
+
+.triptychStage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: var(--canvas-surface);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.triptychStage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.triptychItem:hover .triptychStage img {
+  transform: scale(1.035);
+}
+
+.triptychCode {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--vermilion);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.triptychTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: var(--carbon);
+  margin-bottom: 0.25rem;
+}
+
+.triptychItem:hover .triptychTitle {
+  color: var(--vermilion);
+}
+
+.triptychAuthor {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.85rem;
+  color: var(--carbon-muted);
+  margin-bottom: 0.6rem;
+}
+
+.triptychRating {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  color: var(--carbon);
+}
+
+.triptychRating span:first-child {
+  color: var(--vermilion);
+}
+
+/* ==========================================================================
+   Alternative View: Catalogue Raisonné Table
+   ========================================================================== */
+.catalogueTableView {
+  width: 100%;
+  border: 1px solid var(--carbon);
+  background-color: var(--canvas-paper);
+  border-collapse: collapse;
+}
+
+.catalogueTableView thead th {
+  background-color: var(--carbon);
+  color: var(--canvas);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-align: left;
+  padding: 0.85rem 1.25rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.catalogueTableView tbody tr {
+  border-bottom: 1px solid var(--hairline);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.catalogueTableView tbody tr:hover {
+  background-color: var(--canvas-surface);
+}
+
+.catalogueTableView td {
+  padding: 1rem 1.25rem;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.95rem;
+  color: var(--carbon);
+  vertical-align: middle;
+}
+
+.colAccession {
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.75rem !important;
+  color: var(--vermilion) !important;
+  font-weight: 700;
+  width: 110px;
+}
+
+.colThumbnail {
+  width: 60px;
+}
+
+.tableThumb {
+  width: 44px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid var(--hairline);
+  display: block;
+}
+
+.colTitle {
+  font-family: var(--font-serif, Georgia, serif) !important;
+  font-size: 1.35rem !important;
+  font-weight: 400;
+}
+
+.catalogueTableView tbody tr:hover .colTitle {
+  color: var(--vermilion);
+}
+
+.colAuthor {
+  font-weight: 500;
+  color: var(--carbon-soft);
+}
+
+.colGenre {
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  color: var(--carbon-muted);
+}
+
+.colRating {
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.78rem !important;
+  color: var(--carbon);
+}
+
+.colRating span:first-child {
+  color: var(--vermilion);
+}
+
+.colAction {
+  text-align: right;
+}
+
+.tableOpenBtn {
+  background: transparent;
+  border: 1px solid var(--carbon);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  color: var(--carbon);
+  transition: all var(--transition-fast);
+}
+
+.tableOpenBtn:hover {
+  background-color: var(--carbon);
+  color: #FFFFFF;
+}
+
+/* Fallback cover styling */
+.editorialFallbackCover {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  background-color: var(--canvas-surface);
+  border: 1px solid var(--carbon);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.fallbackHeader {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  color: var(--vermilion);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.fallbackTitleText {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: var(--carbon);
+  margin: 1rem 0;
+}
+
+.fallbackAuthorText {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  color: var(--carbon-muted);
+}
+
+/* Empty State */
+.exhibitionEmptyState {
+  max-width: 600px;
+  margin: 5rem auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 1px dashed var(--carbon);
+  background-color: var(--canvas-paper);
+}
+
+.emptyAccession {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  color: var(--vermilion);
+  font-weight: 700;
+}
+
+.emptyTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 2.2rem;
+  margin: 1rem 0 0.5rem 0;
+  color: var(--carbon);
+}
+
+.emptySubtitle {
+  font-size: 0.95rem;
+  color: var(--carbon-muted);
+  margin-bottom: 1.5rem;
+}
+
+.resetActionBtn {
+  background: var(--carbon);
+  color: var(--canvas);
+  border: none;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.resetActionBtn:hover {
+  background-color: var(--vermilion);
+}
+
+/* Colophon Section */
+.exhibitionColophonSection {
+  max-width: var(--max-width);
+  margin: 8rem auto 0 auto;
+  padding: 4rem 2rem 0 2rem;
+  border-top: 2px solid var(--carbon);
+  box-sizing: border-box;
+}
+
+.colophonInner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+}
+
+.colophonCode {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--vermilion);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.colophonHeadline {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: var(--carbon);
+  margin-bottom: 1rem;
+}
+
+.colophonParagraph {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--carbon-muted);
+}
+
+.colophonMetadataList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border: 1px solid var(--carbon);
+  padding: 1.5rem;
+  background-color: var(--canvas-paper);
+}
+
+.metaEntry {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted var(--hairline);
+  padding-bottom: 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+}
+
+.metaK {
+  color: var(--carbon-muted);
+}
+
+.metaV {
+  color: var(--carbon);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Exhibition Room Modal (Artwork Plinth View)
+   ========================================================================== */
+.exhibitionRoomOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(14, 14, 13, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.exhibitionRoomOverlayActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.exhibitionRoomCanvas {
+  width: 100%;
+  max-width: 1180px;
+  max-height: 90vh;
+  background-color: var(--canvas);
+  border: 2px solid var(--carbon);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+.roomNavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.75rem;
+  background-color: var(--canvas);
+  border-bottom: 1px solid var(--carbon);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+}
+
+.roomAccessionCode {
+  color: var(--vermilion);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.roomCloseBtn {
+  background: transparent;
+  border: 1px solid var(--carbon);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  color: var(--carbon);
+  transition: all var(--transition-fast);
+}
+
+.roomCloseBtn:hover {
+  background-color: var(--carbon);
+  color: #FFFFFF;
+}
+
+.roomContentSplit {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.artworkPlinthColumn {
+  background: radial-gradient(circle at center, #FFFFFF 0%, var(--canvas-surface) 100%);
+  border-right: 1px solid var(--carbon);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.artworkFrame {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artworkImage {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--carbon);
+}
+
+.artworkPlaque {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: var(--canvas-paper);
+  border: 1px solid var(--carbon);
+  padding: 0.65rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  box-sizing: border-box;
+}
+
+.plaqueGenre {
+  color: var(--vermilion);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.plaqueYear {
+  color: var(--carbon-muted);
+}
+
+.curatorialLabelColumn {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  background-color: var(--canvas-paper);
+  overflow-y: auto;
+}
+
+.labelHeader {
+  border-bottom: 2px solid var(--carbon);
+  padding-bottom: 1.5rem;
+}
+
+.labelTitle {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1.05;
+  color: var(--carbon);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.labelCreator {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 1.15rem;
+  color: var(--carbon-muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.labelAssessmentBox {
+  background-color: var(--canvas);
+  border: 1px solid var(--carbon);
+  padding: 1rem 1.25rem;
+}
+
+.assessmentTitle {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--carbon-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.assessmentMeter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meterStars {
+  color: var(--vermilion);
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+}
+
+.meterScore {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--carbon);
+}
+
+.labelEssaySection {
+  flex: 1;
+}
+
+.essayHeading {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--vermilion);
+  margin-bottom: 0.85rem;
+}
+
+.essayBody {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--carbon-soft);
+  white-space: pre-line;
+}
+
+.labelFooter {
+  border-top: 1px solid var(--hairline);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+}
+
+.recordLabel {
+  color: var(--carbon-muted);
+}
+
+.recordValue {
+  color: var(--carbon);
+  font-weight: 700;
+  margin-left: 0.4rem;
+}
+
+.notionAccessionLink {
+  color: var(--vermilion);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color var(--transition-fast);
+}
+
+.notionAccessionLink:hover {
+  text-decoration: underline;
+}
+
+/* Toast */
+.toastContainer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toast {
+  background-color: var(--carbon);
+  color: var(--canvas);
+  border-left: 4px solid var(--vermilion);
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Minimal Architectural Footer */
+.exhibitionFooter {
+  border-top: 2px solid var(--carbon);
+  background-color: var(--canvas);
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.footerGrid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footerBrand {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.5rem;
+  color: var(--carbon);
+}
+
+.footerTagline {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--carbon-muted);
+  letter-spacing: 0.08em;
+}
+
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.monoFootnote {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--carbon-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroCuratorialStatement {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .motifMonument {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .motifDuet {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .duetOffsetRight {
+    margin-top: 0;
+  }
+
+  .motifPanorama {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem;
+  }
+
+  .motifTriptych {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stagger2 {
+    transform: none;
+  }
+
+  .roomContentSplit {
+    grid-template-columns: 1fr;
+  }
+
+  .artworkPlinthColumn {
+    border-right: none;
+    border-bottom: 1px solid var(--carbon);
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .exhibitionHeader {
+    padding: 0 1rem;
+  }
+
+  .headerCenter {
+    display: none;
+  }
+
+  .monumentalHero {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+
+  .line2, .line3 {
+    padding-left: 0;
+  }
+
+  .taxonomyBarInner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem 1rem;
+  }
+
+  .curatorialSearch {
+    max-width: 100%;
+  }
+
+  .exhibitionPromenadeContainer {
+    padding: 0 1rem;
+    gap: 3.5rem;
+  }
+
+  .colophonInner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footerGrid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerRight {
+    align-items: flex-start;
+  }
+}

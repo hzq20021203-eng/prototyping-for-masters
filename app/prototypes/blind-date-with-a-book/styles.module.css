@@ -1,0 +1,1298 @@
+/* ==========================================================================
+   Blind Date With a Book - Scoped CSS Module
+   Independent vintage bookstore editorial aesthetic
+   Palette:
+     Warm Cream: #F7F0E5
+     Deep Burgundy: #7B283C
+     Dusty Pink: #DCA6AD
+     Sage Green: #A9B8A0
+     Dark Brown: #302820
+   ========================================================================== */
+
+.pageContainer {
+  min-height: 100vh;
+  background-color: #F7F0E5;
+  color: #302820;
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 5rem;
+}
+
+/* Tactile SVG Paper Grain Overlay */
+.grainOverlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.28;
+  z-index: 99;
+}
+
+/* ==========================================================================
+   Editorial Masthead & Navigation
+   ========================================================================== */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid rgba(48, 40, 32, 0.12);
+  background: rgba(247, 240, 229, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.mastheadLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #7B283C;
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(123, 40, 60, 0.25);
+  border-radius: 9999px;
+  background: rgba(220, 166, 173, 0.15);
+  transition: all 0.2s ease;
+}
+
+.backLink:hover {
+  background: #7B283C;
+  color: #F7F0E5;
+}
+
+.shopBadge {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7B283C;
+  font-weight: 600;
+  border-left: 1px solid rgba(48, 40, 32, 0.2);
+  padding-left: 1rem;
+}
+
+.mastheadRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.soundToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #F7F0E5;
+  border: 1px solid rgba(48, 40, 32, 0.18);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #302820;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(48, 40, 32, 0.05);
+  transition: all 0.2s ease;
+}
+
+.soundToggle:hover {
+  border-color: #7B283C;
+  color: #7B283C;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.heroSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.heroTaglinePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(220, 166, 173, 0.25);
+  border: 1px dashed #7B283C;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7B283C;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.heroStar {
+  font-size: 0.9rem;
+  color: #7B283C;
+}
+
+.heroTitle {
+  font-size: clamp(2.75rem, 7vw, 4.75rem);
+  line-height: 1.05;
+  color: #7B283C;
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  line-height: 1.6;
+  color: #302820;
+  max-width: 580px;
+  margin: 0 auto 2.25rem;
+  opacity: 0.9;
+}
+
+.heroCtaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #7B283C;
+  color: #F7F0E5;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(123, 40, 60, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.heroCtaButton:hover {
+  background: #5d1b2c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(123, 40, 60, 0.4);
+}
+
+.heroCtaButton:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Mood Selection Section (Collectible Postage Stamps)
+   ========================================================================== */
+
+.moodSection {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sectionPretitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #7B283C;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  color: #302820;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.sectionHint {
+  font-size: 0.925rem;
+  color: rgba(48, 40, 32, 0.75);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.moodGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Vintage Serrated Postage Stamp */
+.moodStamp {
+  position: relative;
+  background: #FDFBF7;
+  border: 1px solid rgba(48, 40, 32, 0.15);
+  border-radius: 6px;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 3px 10px rgba(48, 40, 32, 0.06), 0 1px 3px rgba(48, 40, 32, 0.04);
+}
+
+.moodStamp::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(123, 40, 60, 0.25);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.moodStamp:hover {
+  transform: translateY(-4px) rotate(1deg);
+  box-shadow: 0 8px 24px rgba(123, 40, 60, 0.15);
+  border-color: #7B283C;
+}
+
+.moodStampActive {
+  background: #F7ECEE;
+  border-color: #7B283C;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(123, 40, 60, 0.2);
+}
+
+.moodStampActive::before {
+  border-color: #7B283C;
+  border-style: solid;
+}
+
+.stampPrice {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #7B283C;
+  letter-spacing: 0.05em;
+}
+
+.stampIcon {
+  font-size: 2.2rem;
+  margin-top: 0.4rem;
+  line-height: 1;
+}
+
+.stampLabel {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #302820;
+}
+
+.stampTagline {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: rgba(48, 40, 32, 0.7);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.stampInkMark {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.35;
+  color: #7B283C;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Custom Mood Handwritten Note & Input Section
+   ========================================================================== */
+
+.customMoodContainer {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.customMoodDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 540px;
+  margin-bottom: 1.75rem;
+  color: rgba(123, 40, 60, 0.4);
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(123, 40, 60, 0.35) 0,
+    rgba(123, 40, 60, 0.35) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.dividerOrnament {
+  font-size: 0.85rem;
+  color: #7B283C;
+}
+
+/* Vintage Paper Slip / Desk Memo */
+.customMoodCard {
+  width: 100%;
+  max-width: 680px;
+  background: #FDFBF7;
+  border: 1px solid rgba(48, 40, 32, 0.16);
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  box-shadow:
+    0 4px 16px rgba(48, 40, 32, 0.06),
+    0 1px 3px rgba(48, 40, 32, 0.04);
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.customMoodCard:focus-within {
+  border-color: #7B283C;
+  box-shadow: 0 8px 24px rgba(123, 40, 60, 0.12);
+}
+
+/* Washi Tape Accent on top */
+.customMoodTape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 20px;
+  background: rgba(220, 166, 173, 0.45);
+  border-left: 2px dashed rgba(123, 40, 60, 0.3);
+  border-right: 2px dashed rgba(123, 40, 60, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.customMoodHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.customMoodLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7B283C;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.customMoodQuill {
+  font-size: 1rem;
+}
+
+.activeCustomBadge {
+  font-size: 0.72rem;
+  background: rgba(123, 40, 60, 0.1);
+  color: #7B283C;
+  border: 1px solid rgba(123, 40, 60, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.clearCustomBtn {
+  background: none;
+  border: none;
+  color: #7B283C;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 0 0.2rem;
+}
+
+.customMoodForm {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.customMoodInputWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.customMoodInput {
+  width: 100%;
+  background: #F7F0E5;
+  border: 1px solid rgba(48, 40, 32, 0.2);
+  border-radius: 5px;
+  padding: 0.85rem 1.15rem;
+  font-size: 1.05rem;
+  color: #302820;
+  font-style: italic;
+  box-shadow: inset 0 1px 3px rgba(48, 40, 32, 0.06);
+  transition: all 0.2s ease;
+}
+
+.customMoodInput::placeholder {
+  color: rgba(48, 40, 32, 0.45);
+  font-style: italic;
+}
+
+.customMoodInput:focus {
+  outline: none;
+  border-color: #7B283C;
+  background: #FFFDF9;
+  box-shadow: 0 0 0 3px rgba(123, 40, 60, 0.12);
+}
+
+.customMoodSubmitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #7B283C;
+  color: #F7F0E5;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(123, 40, 60, 0.25);
+  transition: all 0.2s ease;
+}
+
+.customMoodSubmitBtn:hover:not(:disabled) {
+  background: #5d1b2c;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(123, 40, 60, 0.35);
+}
+
+.customMoodSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Suggestion Pills Row */
+.customMoodSuggestions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.suggestionPrompt {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(48, 40, 32, 0.6);
+  font-weight: 700;
+}
+
+.suggestionChip {
+  background: rgba(220, 166, 173, 0.2);
+  border: 1px dashed rgba(123, 40, 60, 0.35);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: #7B283C;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.suggestionChip:hover {
+  background: #7B283C;
+  color: #F7F0E5;
+  border-style: solid;
+}
+
+/* ==========================================================================
+   Interactive Mystery Stage (Wrapped Book & Reveal)
+   ========================================================================== */
+
+.mysteryStage {
+  max-width: 960px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Stage status banner */
+.stageStatusBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7B283C;
+  margin-bottom: 2rem;
+  background: rgba(220, 166, 173, 0.2);
+  padding: 0.45rem 1.25rem;
+  border-radius: 9999px;
+}
+
+/* Loading State: Searching bookshelves */
+.loadingBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: #FDFBF7;
+  border: 1px dashed rgba(48, 40, 32, 0.2);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(48, 40, 32, 0.05);
+}
+
+.loadingSpinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(123, 40, 60, 0.2);
+  border-top-color: #7B283C;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin-bottom: 1.25rem;
+}
+
+.loadingText {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #302820;
+  margin-bottom: 0.35rem;
+}
+
+.loadingSub {
+  font-size: 0.85rem;
+  color: rgba(48, 40, 32, 0.7);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   CSS/SVG Layered Mystery Book (Wrapped State)
+   ========================================================================== */
+
+.bookStageWrapper {
+  perspective: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrappedBookCard {
+  position: relative;
+  width: 350px;
+  height: 490px;
+  max-width: 90vw;
+  background: #E8DDCB;
+  border-radius: 6px 12px 12px 6px;
+  box-shadow:
+    -6px 0 10px rgba(0, 0, 0, 0.15),
+    12px 18px 36px rgba(48, 40, 32, 0.25),
+    inset 4px 0 8px rgba(255, 255, 255, 0.3),
+    inset -4px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.wrappedBookCard:hover {
+  transform: translateY(-4px) rotate(0.5deg);
+}
+
+/* Book Spine 3D Crease */
+.bookSpineEffect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 22px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(255, 255, 255, 0.25) 85%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  border-radius: 6px 0 0 6px;
+  z-index: 10;
+}
+
+/* Diagonal Parcel Wrap Paper Creases */
+.paperWrapCreaseTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.06) 100%);
+  border-bottom: 1px dashed rgba(48, 40, 32, 0.15);
+  transform-origin: top;
+  pointer-events: none;
+}
+
+.paperWrapCreaseBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(-145deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.08) 100%);
+  border-top: 1px dashed rgba(48, 40, 32, 0.15);
+  transform-origin: bottom;
+  pointer-events: none;
+}
+
+/* Tied Velvet / Satin Ribbon (Deep Burgundy) */
+.verticalRibbon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  transform: translateX(-50%);
+  background: #7B283C;
+  border-left: 2px solid #5d1b2c;
+  border-right: 2px solid #5d1b2c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
+.horizontalRibbon {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  right: 0;
+  height: 32px;
+  transform: translateY(-50%);
+  background: #7B283C;
+  border-top: 2px solid #5d1b2c;
+  border-bottom: 2px solid #5d1b2c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
+/* Center Wax Seal */
+.waxSeal {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #9b334b 0%, #7B283C 60%, #4f1522 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  color: #F7F0E5;
+  border: 2px solid #4f1522;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
+.waxSealInsignia {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Attached Luggage Tag With Mystery Clues */
+.luggageTag {
+  position: relative;
+  background: #FDFBF7;
+  border: 1px solid rgba(48, 40, 32, 0.18);
+  border-radius: 4px;
+  padding: 1.15rem;
+  margin-top: 0.75rem;
+  box-shadow: 0 6px 18px rgba(48, 40, 32, 0.15);
+  transform: rotate(-1.5deg);
+  z-index: 12;
+  transition: transform 0.3s ease;
+}
+
+.luggageTag:hover {
+  transform: rotate(0deg) scale(1.01);
+}
+
+/* Tag string / twine */
+.tagTwine {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 26px;
+  background: repeating-linear-gradient(
+    45deg,
+    #B58A63,
+    #B58A63 4px,
+    #9C724C 4px,
+    #9C724C 8px
+  );
+  border-radius: 2px;
+}
+
+.tagEyelet {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #B58A63;
+  background: #E8DDCB;
+}
+
+.tagHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(48, 40, 32, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tagMysteryLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7B283C;
+  font-weight: 800;
+}
+
+.tagStampMark {
+  font-size: 0.65rem;
+  color: #7B283C;
+  border: 1px solid #7B283C;
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: rotate(3deg);
+}
+
+.clueList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.clueItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #302820;
+}
+
+.clueIcon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: -1px;
+}
+
+.clueText {
+  flex: 1;
+}
+
+.clueBold {
+  font-weight: 700;
+  color: #7B283C;
+}
+
+/* ==========================================================================
+   Unwrapping Interaction Tab ("PULL TO UNWRAP")
+   ========================================================================== */
+
+.pullTabWrapper {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.pullTabButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: #7B283C;
+  color: #F7F0E5;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  border: 2px dashed #F7F0E5;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(123, 40, 60, 0.35);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pullTabButton:hover {
+  background: #5d1b2c;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(123, 40, 60, 0.45);
+}
+
+.pullTabButton:active {
+  transform: translateY(1px);
+}
+
+.pullTabButton:focus-visible {
+  outline: 3px solid #7B283C;
+  outline-offset: 4px;
+}
+
+.scissorsGraphic {
+  font-size: 1.1rem;
+}
+
+.pullHint {
+  font-size: 0.78rem;
+  color: rgba(48, 40, 32, 0.65);
+}
+
+/* ==========================================================================
+   Unwrapping Animation State
+   ========================================================================== */
+
+.isUnwrapping .verticalRibbon {
+  transform: translateX(-50%) translateY(-140px);
+  opacity: 0;
+}
+
+.isUnwrapping .horizontalRibbon {
+  transform: translateY(-50%) scaleX(0.1);
+  opacity: 0;
+}
+
+.isUnwrapping .waxSeal {
+  transform: translate(-50%, -50%) rotate(45deg) scale(0.2);
+  opacity: 0;
+}
+
+.isUnwrapping .wrappedBookCard {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(123, 40, 60, 0.3);
+}
+
+/* ==========================================================================
+   Reveal Section: Real Book & Library Borrower's Slip
+   ========================================================================== */
+
+.revealContainer {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  background: #FDFBF7;
+  border: 1px solid rgba(48, 40, 32, 0.15);
+  border-radius: 12px;
+  padding: 2.25rem;
+  box-shadow: 0 16px 40px rgba(48, 40, 32, 0.12);
+  width: 100%;
+  max-width: 900px;
+  animation: revealFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: relative;
+}
+
+@keyframes revealFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Left Column: 3D Real Book Cover Display */
+.revealCoverCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.bookCover3D {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 2 / 3;
+  border-radius: 4px 8px 8px 4px;
+  overflow: hidden;
+  box-shadow:
+    -6px 0 12px rgba(0, 0, 0, 0.25),
+    10px 16px 30px rgba(48, 40, 32, 0.3);
+  background: #302820;
+}
+
+.bookCoverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fallback stylized clothbound book cover when cover image is unavailable */
+.bookCoverFallback {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 30%, #7B283C 0%, #4A1422 100%);
+  color: #F7F0E5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 4px double rgba(247, 240, 229, 0.35);
+  box-sizing: border-box;
+}
+
+.fallbackFoilStar {
+  font-size: 1.5rem;
+  color: #E8DDCB;
+}
+
+.fallbackTitle {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #F7F0E5;
+  margin-bottom: 0.5rem;
+}
+
+.fallbackAuthor {
+  font-size: 0.9rem;
+  color: #DCA6AD;
+  font-style: italic;
+}
+
+.coverRibbonBookmark {
+  position: absolute;
+  bottom: -16px;
+  right: 32px;
+  width: 18px;
+  height: 38px;
+  background: #7B283C;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Column: Library Borrower's Card */
+.revealCardCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardHeader {
+  border-bottom: 2px solid #302820;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cardClassLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7B283C;
+  font-weight: 800;
+}
+
+.cardAccessionNo {
+  font-size: 0.8rem;
+  color: rgba(48, 40, 32, 0.6);
+  letter-spacing: 0.05em;
+}
+
+.bookTitle {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  color: #7B283C;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.bookAuthor {
+  font-size: 1.15rem;
+  color: #302820;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.bookAuthorPrefix {
+  font-weight: 400;
+  color: rgba(48, 40, 32, 0.65);
+  font-style: italic;
+}
+
+/* Metadata pill tags */
+.metaTagsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.metaTagPill {
+  font-size: 0.72rem;
+  background: rgba(169, 184, 160, 0.25);
+  color: #302820;
+  border: 1px solid rgba(169, 184, 160, 0.5);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.metaTagYear {
+  background: rgba(220, 166, 173, 0.25);
+  border-color: rgba(123, 40, 60, 0.3);
+  color: #7B283C;
+}
+
+/* Description block */
+.descriptionBox {
+  position: relative;
+  background: rgba(247, 240, 229, 0.6);
+  border-left: 3px solid #7B283C;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.descriptionText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #302820;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Action button bar */
+.cardActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(48, 40, 32, 0.2);
+}
+
+.dateAgainButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #7B283C;
+  color: #F7F0E5;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(123, 40, 60, 0.3);
+  transition: all 0.2s ease;
+}
+
+.dateAgainButton:hover {
+  background: #5d1b2c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(123, 40, 60, 0.4);
+}
+
+.openLibraryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7B283C;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.openLibraryLink:hover {
+  color: #302820;
+}
+
+/* Date Due Rubber Stamp Simulation */
+.dateDueStamp {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  border: 2px solid #7B283C;
+  border-radius: 4px;
+  padding: 0.25rem 0.65rem;
+  color: #7B283C;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Footer & Attribution
+   ========================================================================== */
+
+.pageFooter {
+  max-width: 900px;
+  margin: 4rem auto 0;
+  padding: 2rem 1.5rem 0;
+  border-top: 1px solid rgba(48, 40, 32, 0.12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.attributionText {
+  font-size: 0.85rem;
+  color: rgba(48, 40, 32, 0.7);
+}
+
+.attributionLink {
+  color: #7B283C;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footerNotes {
+  font-size: 0.75rem;
+  color: rgba(48, 40, 32, 0.5);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints & Reduced Motion
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .masthead {
+    padding: 1rem 1.25rem;
+  }
+  .shopBadge {
+    display: none;
+  }
+  .heroSection {
+    padding: 3rem 1.25rem 2rem;
+  }
+  .moodGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .customMoodCard {
+    padding: 1.25rem 1rem;
+  }
+  .customMoodForm {
+    flex-direction: column;
+  }
+  .customMoodSubmitBtn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+  .revealContainer {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.75rem;
+  }
+  .bookCover3D {
+    max-width: 220px;
+  }
+  .dateDueStamp {
+    position: static;
+    transform: none;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moodStamp,
+  .heroCtaButton,
+  .wrappedBookCard,
+  .pullTabButton,
+  .dateAgainButton,
+  .revealContainer {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
