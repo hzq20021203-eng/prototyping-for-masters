@@ -103,6 +103,14 @@ export default function Home() {
       tag: "Notion API",
       size: "5.1 KB",
     },
+    {
+      title: "Inspiration library",
+      description: "Personal Are.na / Pinterest visual archive with boards, masonry curation, Better Auth, and Supabase PostgreSQL",
+      path: "https://inspiration-library-lemon.vercel.app",
+      icon: "pin",
+      tag: "Better Auth",
+      size: "6.2 KB",
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype\,
@@ -223,12 +231,16 @@ export default function Home() {
           {/* Window Body: Prototype Cards */}
           <div className={styles.windowContent}>
             <div className={styles.grid}>
-              {prototypes.map((prototype, index) => (
-                <Link
-                  key={index}
-                  href={prototype.path}
-                  className={styles.card}
-                >
+              {prototypes.map((prototype, index) => {
+                const isExternal = prototype.path.startsWith("http");
+                return (
+                  <Link
+                    key={index}
+                    href={prototype.path}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className={styles.card}
+                  >
                   <div className={styles.cardTopRow}>
                     <div className={styles.cardIconBox}>
                       <DoodleIcon name={prototype.icon} size={28} />
@@ -252,7 +264,8 @@ export default function Home() {
                     </span>
                   </div>
                 </Link>
-              ))}
+              );
+            })}
             </div>
 
             {/* Design helper note */}
